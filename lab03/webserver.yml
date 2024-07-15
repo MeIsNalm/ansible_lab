@@ -1,6 +1,3 @@
-
-```yaml
----
 - name: Install and configure web server
   hosts: webserver
   become: true
@@ -25,4 +22,3 @@
     - name: Debug smoke test
       ansible.builtin.debug:
         msg: "{{ result.content }}"
-```
