@@ -1,16 +1,28 @@
+
+```yaml
+---
 - name: Install and configure web server
   hosts: webserver
   become: true
   tasks:
-    - name: Update and upgrade apt packages
-      ansible.builtin.apt:
-        update_cache: true
-        cache_valid_time: 86400
     - name: Install Apache
-      ansible.builtin.apt:
-        name: apache2
+      ansible.builtin.yum:
+        name: httpd
         state: latest
     - name: Start Apache
       ansible.builtin.service:
-        name: apache2
+        name: httpd
         state: started
+    - name: Copy index.html
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+    - name: Run smoke test
+      ansible.builtin.uri:
+        url: http://localhost
+        return_content: yes
+      register: result
+    - name: Debug smoke test
+      ansible.builtin.debug:
+        msg: "{{ result.content }}"
+```
