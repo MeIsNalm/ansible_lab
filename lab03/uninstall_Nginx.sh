@@ -1,0 +1,1 @@
+ansible -i inventory/hosts.yml all -m ansible.builtin.service -a "name=nginx state=stopped" --become
