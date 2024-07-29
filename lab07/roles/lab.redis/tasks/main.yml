@@ -1,4 +1,4 @@
----
+```yaml
 - name: Install Redis
   ansible.builtin.yum:
     name: redis
@@ -53,5 +53,4 @@ handlers:
   service:
     name: redis
     state: restarted
-
-
+```

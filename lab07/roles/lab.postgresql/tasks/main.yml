@@ -1,3 +1,4 @@
+```yaml
 - name: Install and configure PostgreSQL
   hosts: db
   become: true
@@ -35,3 +36,4 @@
     - name: Print PostgreSQL version
       ansible.builtin.debug:
         msg: "{{ postgresql_version.stdout }}"
+```
