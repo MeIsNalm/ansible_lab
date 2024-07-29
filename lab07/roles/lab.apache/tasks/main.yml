@@ -1,0 +1,4 @@
+- name: Install and configure web server
+  tags:
+    - webserver
+  import_playbook: webserver.yml
