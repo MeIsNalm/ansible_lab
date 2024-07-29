@@ -41,15 +41,3 @@
     backup: yes
   notify:
     - Restart Redis
-
-handlers:
-- name: Start Redis
-  service:
-    name: redis
-    state: started
-    enabled: true
-
-- name: Restart Redis
-  service:
-    name: redis
-    state: restarted
