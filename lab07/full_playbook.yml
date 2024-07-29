@@ -10,5 +10,6 @@
       hosts: all
       become: yes
       roles:
-        - db
-        - apache
+        - lab.redis
+        - lab.postgresql
+        - lab.apache
