@@ -1,0 +1,14 @@
+---
+- name: Clean Nginx service
+  hosts: all
+  become: yes
+  tasks:
+  - name: Stop nginx
+    service:
+      name: nginx
+      state: stopped
+ 
+  - name: Remove nginx
+    package:
+      name: nginx
+      state: absent
