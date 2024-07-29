@@ -1,0 +1,14 @@
+- name: Install and configure Redis
+  hosts: all
+  become: true
+  tags:
+    - redis
+  vars:
+    redis_password: ansible
+  tasks:
+    - name: Install Redis, PostgreSQL and Apache
+      hosts: all
+      become: yes
+      roles:
+        - db
+        - apache
