@@ -1,0 +1,4 @@
+windows:
+  hosts:
+    windows-server:
+      ansible_host: 10.3.0.7
